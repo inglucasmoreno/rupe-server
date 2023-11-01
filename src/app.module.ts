@@ -14,6 +14,8 @@ import { VehiculosModule } from './modules/vehiculos/vehiculos.module';
 import { RupeDiscapacidadModule } from './modules/rupe-discapacidad/rupe-discapacidad.module';
 import { RupeConductorDiscapacitadoModule } from './modules/rupe-conductor-discapacitado/rupe-conductor-discapacitado.module';
 import { RupeConductoresModule } from './modules/rupe-conductores/rupe-conductores.module';
+import { RupeDiscapacidadRenovacionesModule } from './modules/rupe-discapacidad-renovaciones/rupe-discapacidad-renovaciones.module';
+import { RupeConductorDiscapacitadoRenovacionesModule } from './modules/rupe-conductor-discapacitado-renovaciones/rupe-conductor-discapacitado-renovaciones.module';
 
 @Module({
   imports: [
@@ -44,6 +46,8 @@ import { RupeConductoresModule } from './modules/rupe-conductores/rupe-conductor
     RupeDiscapacidadModule,
     RupeConductorDiscapacitadoModule,
     RupeConductoresModule,
+    RupeDiscapacidadRenovacionesModule,
+    RupeConductorDiscapacitadoRenovacionesModule,
 
   ],
   controllers: [AppController],

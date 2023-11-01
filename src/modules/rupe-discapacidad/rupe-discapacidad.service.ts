@@ -111,8 +111,32 @@ export class RupeDiscapacidadService {
   }
 
   // Crear RUPE
-  async insert(createData: Prisma.RupeDiscapacidadCreateInput): Promise<RupeDiscapacidad> {
-    return await this.prisma.rupeDiscapacidad.create({ data: createData, include: { creatorUser: true } });
+  async insert(createData: any): Promise<RupeDiscapacidad> {
+
+    // Verificacion - Ya existe un rupe con este beneficiario
+    
+    const rupe = await this.prisma.rupeDiscapacidad.findFirst({
+      where: {
+        beneficiarioId: createData.beneficiarioId
+      }
+    })
+    
+    if(rupe) throw new NotFoundException('Ya existe un RUPE para este beneficiario');
+
+    const data = {
+      ...createData,
+      fechaOtorgamiento: new Date(),
+      fechaVencimiento: new Date(new Date().setMonth(new Date().getMonth() + 6))
+    }
+
+    return await this.prisma.rupeDiscapacidad.create({ 
+      data,
+      include: { 
+        beneficiario: true,
+        vehiculo: true,
+        creatorUser: true 
+      } });
+      
   }
 
   // Actualizar RUPE
@@ -121,7 +145,9 @@ export class RupeDiscapacidadService {
       where: { id },
       data: updateData,
       include: {
-        creatorUser: true
+        beneficiario: true,
+        vehiculo: true,
+        creatorUser: true,
       }
     })
   }

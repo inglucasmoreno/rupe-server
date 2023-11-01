@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -531,
-    "scrollLeft": -262,
-    "zoomLevel": 1,
+    "scrollTop": -829,
+    "scrollLeft": -228,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -497,6 +497,29 @@
             "id": "ac7bb2c5-2fe8-4a46-ad51-8b4e325809a6"
           },
           {
+            "name": "cud",
+            "comment": "",
+            "dataType": "string",
+            "default": "\"\"",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "fde65096-9b8a-4963-a498-d78642571efe"
+          },
+          {
             "name": "activo",
             "comment": "",
             "dataType": "boolean",
@@ -524,7 +547,7 @@
           "active": false,
           "left": 573.2222,
           "top": 258.3611,
-          "zIndex": 3,
+          "zIndex": 4,
           "widthName": 60,
           "widthComment": 60,
           "color": "#00FF13"
@@ -654,9 +677,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1118.2496,
-          "top": 637.0493,
-          "zIndex": 4,
+          "left": 1113.2496,
+          "top": 669.5493,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 60,
           "color": "#FF0000"
@@ -761,29 +784,6 @@
             "id": "b7008539-dd37-41e5-9385-33aaf04d02f8"
           },
           {
-            "name": "observaciones",
-            "comment": "",
-            "dataType": "string",
-            "default": "\"\"",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 85.8271484375,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "84f21691-5d66-48d0-a557-979a5123402b"
-          },
-          {
             "name": "fechaOtorgamiento",
             "comment": "",
             "dataType": "date",
@@ -830,52 +830,6 @@
             "id": "e6838102-4d57-4ca8-a8ec-35ef4a504791"
           },
           {
-            "name": "entregado",
-            "comment": "",
-            "dataType": "boolean",
-            "default": "false",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60.55078125,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "1ec6f53f-3984-4ed1-8b4c-f60d4025127a"
-          },
-          {
-            "name": "controlado",
-            "comment": "",
-            "dataType": "boolean",
-            "default": "false",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 62.708984375,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "f6152b25-6c8a-4dfe-88e7-2ad41918b91a"
-          },
-          {
             "name": "activo",
             "comment": "",
             "dataType": "boolean",
@@ -901,9 +855,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1090.9168,
-          "top": 238.3889,
-          "zIndex": 5,
+          "left": 1086.4724,
+          "top": 277.2774,
+          "zIndex": 8,
           "widthName": 111.13525390625,
           "widthComment": 60,
           "color": "#00F6FF"
@@ -1008,29 +962,6 @@
             "id": "7cb8c5c3-dd9d-4ec0-a192-ffc001c25bad"
           },
           {
-            "name": "observaciones",
-            "comment": "",
-            "dataType": "string",
-            "default": "\"\"",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 85.8271484375,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "e44747c9-4e4f-40d2-ac87-8953e0efd4b4"
-          },
-          {
             "name": "fechaOtorgamiento",
             "comment": "",
             "dataType": "date",
@@ -1077,52 +1008,6 @@
             "id": "396a8401-7f1b-4ef1-bf5d-3597856358a4"
           },
           {
-            "name": "entregado",
-            "comment": "",
-            "dataType": "boolean",
-            "default": "false",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60.55078125,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "c1e388a7-818a-4946-9cb1-4d2962af76be"
-          },
-          {
-            "name": "controlado",
-            "comment": "",
-            "dataType": "boolean",
-            "default": "false",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 62.708984375,
-              "widthComment": 60,
-              "widthDataType": 60,
-              "widthDefault": 60
-            },
-            "id": "53a0c5b5-d695-4235-ac64-7ae7db0ee0ba"
-          },
-          {
             "name": "activo",
             "comment": "",
             "dataType": "boolean",
@@ -1150,7 +1035,7 @@
           "active": false,
           "left": 149.3791,
           "top": 580.9172,
-          "zIndex": 7,
+          "zIndex": 5,
           "widthName": 179.06787109375,
           "widthComment": 60,
           "color": "#FDDE53"
@@ -1257,15 +1142,233 @@
         ],
         "ui": {
           "active": false,
-          "left": 526.7232,
-          "top": 914.8287,
-          "zIndex": 12,
+          "left": 520.0566,
+          "top": 913.7176,
+          "zIndex": 6,
           "widthName": 106.06982421875,
           "widthComment": 60,
           "color": "#FDDE53"
         },
         "visible": true,
         "id": "4e404276-358d-47ca-beba-bd440750de3c"
+      },
+      {
+        "name": "rupe_conductores_renovaciones",
+        "comment": "",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "01b8fa1f-57c6-4959-ac4d-19708887b764"
+          },
+          {
+            "name": "rupeConductorDiscapacidad",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 166.04248046875,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "af1267da-27e6-4524-933e-e4237025e2d4"
+          },
+          {
+            "name": "fechaRenovacion",
+            "comment": "",
+            "dataType": "date",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.4580078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "8713d5a1-e61c-45c6-a5b2-2b0df5299952"
+          },
+          {
+            "name": "activo",
+            "comment": "",
+            "dataType": "boolean",
+            "default": "true",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4fd38e74-0f21-4dda-8545-3ba9ec00a29f"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 521.333,
+          "top": 1170.4437,
+          "zIndex": 7,
+          "widthName": 190.626953125,
+          "widthComment": 60,
+          "color": "#FDDE53"
+        },
+        "visible": true,
+        "id": "c81bfad4-7919-4dfb-8166-3fbb4aa4d7fa"
+      },
+      {
+        "name": "rupe_discapacidad_renovaciones",
+        "comment": "",
+        "columns": [
+          {
+            "name": "id",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "6013ee3e-6d7a-434e-9ca1-7dc47beb4188"
+          },
+          {
+            "name": "rupeDiscapacidad",
+            "comment": "",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 106.0634765625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2facd8ca-288b-479b-bc22-cf430e4f8381"
+          },
+          {
+            "name": "fechaRenovacion",
+            "comment": "",
+            "dataType": "date",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.4580078125,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "32093205-194d-446c-8357-34403e49f873"
+          },
+          {
+            "name": "activo",
+            "comment": "",
+            "dataType": "boolean",
+            "default": "true",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "c65bac0d-14bb-4052-b3a4-c06469b3fd12"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1089.2221,
+          "top": 37.8898,
+          "zIndex": 9,
+          "widthName": 195.6923828125,
+          "widthComment": 60,
+          "color": "#00F6FF"
+        },
+        "visible": true,
+        "id": "d3fc11aa-3ac1-4e35-894f-f5de26b6b7ca"
       }
     ],
     "indexes": []
@@ -1285,7 +1388,7 @@
             "b568b6f1-f0b1-428f-bddc-8fd2f08a99c5"
           ],
           "x": 938.10843046875,
-          "y": 374.8611,
+          "y": 385.1111,
           "direction": "right"
         },
         "end": {
@@ -1293,8 +1396,8 @@
           "columnIds": [
             "cb5e79f4-95a6-4442-89c4-f2a93635111b"
           ],
-          "x": 1090.9168,
-          "y": 375.38890000000004,
+          "x": 1086.4724,
+          "y": 383.5274,
           "direction": "left"
         },
         "constraintName": "fk_personas_to_rupe_discapacidad",
@@ -1310,8 +1413,8 @@
           "columnIds": [
             "6f1fcb76-7455-48fd-b1bd-955a183eed06"
           ],
-          "x": 1291.7496,
-          "y": 637.0493,
+          "x": 1286.7496,
+          "y": 669.5493,
           "direction": "top"
         },
         "end": {
@@ -1319,8 +1422,8 @@
           "columnIds": [
             "16e19f25-e1ec-40be-8dce-09a87182c50e"
           ],
-          "x": 1290.69853828125,
-          "y": 512.3889,
+          "x": 1286.25413828125,
+          "y": 489.7774,
           "direction": "bottom"
         },
         "constraintName": "fk_vehiculos_to_rupe_discapacidad",
@@ -1336,18 +1439,18 @@
           "columnIds": [
             "b568b6f1-f0b1-428f-bddc-8fd2f08a99c5"
           ],
-          "x": 573.2222,
-          "y": 374.8611,
-          "direction": "left"
+          "x": 664.4437576171875,
+          "y": 511.8611,
+          "direction": "bottom"
         },
         "end": {
           "tableId": "1b27c0a1-15a7-4f30-8448-cf4fb6870170",
           "columnIds": [
             "2ef5365b-1058-41d2-89d9-abab1af5d0d3"
           ],
-          "x": 349.16083828125,
-          "y": 580.9172,
-          "direction": "top"
+          "x": 548.9425765625,
+          "y": 634.0422,
+          "direction": "right"
         },
         "constraintName": "fk_personas_to_rupe_conductor_discapacitado",
         "visible": true,
@@ -1362,8 +1465,8 @@
           "columnIds": [
             "6f1fcb76-7455-48fd-b1bd-955a183eed06"
           ],
-          "x": 1118.2496,
-          "y": 722.7993,
+          "x": 1113.2496,
+          "y": 755.2993,
           "direction": "left"
         },
         "end": {
@@ -1372,7 +1475,7 @@
             "b6d19873-b6c8-4653-b49f-c7ba733a58be"
           ],
           "x": 548.9425765625,
-          "y": 717.9172,
+          "y": 740.2922,
           "direction": "right"
         },
         "constraintName": "fk_vehiculos_to_rupe_conductor_discapacitado",
@@ -1388,8 +1491,8 @@
           "columnIds": [
             "b568b6f1-f0b1-428f-bddc-8fd2f08a99c5"
           ],
-          "x": 755.665315234375,
-          "y": 491.3611,
+          "x": 846.8868728515625,
+          "y": 511.8611,
           "direction": "bottom"
         },
         "end": {
@@ -1397,8 +1500,8 @@
           "columnIds": [
             "abe65c4c-18e8-4f25-86df-464b6874ce9e"
           ],
-          "x": 755.0503484375,
-          "y": 914.8287,
+          "x": 748.3837484375,
+          "y": 913.7176,
           "direction": "top"
         },
         "constraintName": "fk_personas_to_rupe_conductores",
@@ -1415,7 +1518,7 @@
             "eefcbc39-9ddb-42b4-842b-43bddac773e4"
           ],
           "x": 349.16083828125,
-          "y": 854.9172,
+          "y": 793.4172,
           "direction": "bottom"
         },
         "end": {
@@ -1423,13 +1526,65 @@
           "columnIds": [
             "8577d42a-0fd3-464d-b11d-2a34f9992ce8"
           ],
-          "x": 526.7232,
-          "y": 990.3287,
+          "x": 520.0566,
+          "y": 989.2176,
           "direction": "left"
         },
         "constraintName": "fk_rupe_conductor_discapacitado_to_rupe_conductores",
         "visible": true,
         "id": "73583d81-60af-45a8-b095-d7a1fc986562"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "4e404276-358d-47ca-beba-bd440750de3c",
+          "columnIds": [
+            "e893b706-7f71-425b-9436-8a305a436357"
+          ],
+          "x": 748.3837484375,
+          "y": 1064.7176,
+          "direction": "bottom"
+        },
+        "end": {
+          "tableId": "c81bfad4-7919-4dfb-8166-3fbb4aa4d7fa",
+          "columnIds": [
+            "af1267da-27e6-4524-933e-e4237025e2d4"
+          ],
+          "x": 747.854240234375,
+          "y": 1170.4437,
+          "direction": "top"
+        },
+        "constraintName": "fk_rupe_conductores_to_rupe_conductores_renovaciones",
+        "visible": true,
+        "id": "161b4561-d32f-4f2b-ab29-23817561ede7"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "7596fb14-db85-4efd-94b9-18be4c5eac0c",
+          "columnIds": [
+            "ff49ce68-72d5-409d-b220-4119fbff6999"
+          ],
+          "x": 1286.25413828125,
+          "y": 277.2774,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "d3fc11aa-3ac1-4e35-894f-f5de26b6b7ca",
+          "columnIds": [
+            "2facd8ca-288b-479b-bc22-cf430e4f8381"
+          ],
+          "x": 1285.75383828125,
+          "y": 188.8898,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_rupe_discapacidad_to_rupe_discapacidad_renovaciones",
+        "visible": true,
+        "id": "5e241582-3415-407d-8dff-36c151ffb9e5"
       }
     ]
   }

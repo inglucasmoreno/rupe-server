@@ -22,11 +22,29 @@ export class VehiculosService {
 
   }
 
+  // Vehiculo por Dominio
+  async getDominio(dominio: string): Promise<Vehiculos> {
+
+    // Sanitizacion de dominio
+    dominio = dominio?.replace('-', '').replace(' ', '').trim();
+
+    const vehiculo = await this.prisma.vehiculos.findFirst({
+      where: { dominio },
+      include: {
+        creatorUser: true,
+      }
+    })
+
+    if (!vehiculo) throw new NotFoundException('El vehiculo no existe');
+    return vehiculo;
+
+  }
+
   // Listar vehiculos
   async getAll({
     columna = 'dominio',
     direccion = 'desc',
-    activo='',
+    activo = '',
     parametro = '',
     pagina = 1,
     itemsPorPagina = 10000

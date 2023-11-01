@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpStatus, Param, Post, Headers, Query, Res, UseGuards, Patch } from '@nestjs/common';
+import { Body, Controller, Get, HttpStatus, Param, Post, Headers, Query, Res, UseGuards, Patch, Delete } from '@nestjs/common';
 import { RupeConductoresService } from './rupe-conductores.service';
 import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 import { Prisma } from '@prisma/client';
@@ -70,4 +70,19 @@ export class RupeConductoresController {
     })
 
   }
+
+  @UseGuards(JwtAuthGuard)
+  @Delete('/:id')
+  async deleteConductor(@Res() res, @Param('id') id: number): Promise<any> {
+
+    const conductor = await this.conductoresService.delete(id);
+
+    res.status(HttpStatus.OK).json({
+      success: true,
+      message: 'Conductor eliminado correctamente',
+      conductor
+    })
+
+  }
+
 }

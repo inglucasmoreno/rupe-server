@@ -13,23 +13,25 @@ datasource db {
 // Listado de modelos
 
 model Usuarios {
-  id                         Int                          @id @default(autoincrement())
-  usuario                    String                       @unique @db.VarChar(30)
-  apellido                   String                       @db.VarChar(50)
-  nombre                     String                       @db.VarChar(50)
-  dni                        String                       @db.VarChar(30)
-  password                   String
-  email                      String                       @db.VarChar(50)
-  role                       String?                      @default("ADMIN_ROLE")
-  activo                     Boolean?                     @default(true)
-  createdAt                  DateTime                     @default(now())
-  updatedAt                  DateTime                     @updatedAt
-  permisos                   UsuariosPermisos[]
-  Personas                   Personas[]
-  Vehiculos                  Vehiculos[]
-  RupeDiscapacidad           RupeDiscapacidad[]
-  RupeConductorDiscapacitado RupeConductorDiscapacitado[]
-  RupeConductores            RupeConductores[]
+  id                                     Int                                      @id @default(autoincrement())
+  usuario                                String                                   @unique @db.VarChar(30)
+  apellido                               String                                   @db.VarChar(50)
+  nombre                                 String                                   @db.VarChar(50)
+  dni                                    String                                   @db.VarChar(30)
+  password                               String
+  email                                  String                                   @db.VarChar(50)
+  role                                   String?                                  @default("ADMIN_ROLE")
+  activo                                 Boolean?                                 @default(true)
+  createdAt                              DateTime                                 @default(now())
+  updatedAt                              DateTime                                 @updatedAt
+  permisos                               UsuariosPermisos[]
+  Personas                               Personas[]
+  Vehiculos                              Vehiculos[]
+  RupeDiscapacidad                       RupeDiscapacidad[]
+  RupeConductorDiscapacitado             RupeConductorDiscapacitado[]
+  RupeConductores                        RupeConductores[]
+  RupeDiscapacidadRenovaciones           RupeDiscapacidadRenovaciones[]
+  RupeConductorDiscapacitadoRenovaciones RupeConductorDiscapacitadoRenovaciones[]
 }
 
 model UsuariosPermisos {
@@ -50,7 +52,6 @@ model Personas {
   dni                        String                       @db.VarChar(30)
   telefono                   String                       @default("") @db.VarChar(30)
   sexo                       String                       @default("Masculino") @db.VarChar(20)
-  discapacidad               Boolean?                     @default(false)
   activo                     Boolean?                     @default(true)
   creatorUserId              Int
   creatorUser                Usuarios                     @relation(fields: [creatorUserId], references: [id])
@@ -76,42 +77,38 @@ model Vehiculos {
 }
 
 model RupeDiscapacidad {
-  id                Int       @id @default(autoincrement())
-  telefonoContacto  String    @db.VarChar(50)
-  observaciones     String
-  fechaOtorgamiento DateTime  @default(now())
-  fechaVencimiento  DateTime  @default(now())
-  entregado         Boolean?  @default(false)
-  controlado        Boolean?  @default(false)
-  activo            Boolean?  @default(true)
-  beneficiarioId    Int
-  beneficiario      Personas  @relation(fields: [beneficiarioId], references: [id])
-  vehiculoId        Int
-  vehiculo          Vehiculos @relation(fields: [vehiculoId], references: [id])
-  creatorUserId     Int
-  creatorUser       Usuarios  @relation(fields: [creatorUserId], references: [id])
-  createdAt         DateTime? @default(now())
-  updatedAt         DateTime? @updatedAt
+  id                           Int                            @id @default(autoincrement())
+  telefonoContacto             String                         @db.VarChar(50)
+  fechaOtorgamiento            DateTime                       @default(now())
+  fechaVencimiento             DateTime                       @default(now())
+  activo                       Boolean?                       @default(true)
+  beneficiarioId               Int
+  beneficiario                 Personas                       @relation(fields: [beneficiarioId], references: [id])
+  vehiculoId                   Int
+  vehiculo                     Vehiculos                      @relation(fields: [vehiculoId], references: [id])
+  creatorUserId                Int
+  creatorUser                  Usuarios                       @relation(fields: [creatorUserId], references: [id])
+  createdAt                    DateTime?                      @default(now())
+  updatedAt                    DateTime?                      @updatedAt
+  RupeDiscapacidadRenovaciones RupeDiscapacidadRenovaciones[]
 }
 
 model RupeConductorDiscapacitado {
-  id                Int               @id @default(autoincrement())
-  telefonoContacto  String            @db.VarChar(50)
-  observaciones     String
-  fechaOtorgamiento DateTime          @default(now())
-  fechaVencimiento  DateTime          @default(now())
-  entregado         Boolean?          @default(false)
-  controlado        Boolean?          @default(false)
-  activo            Boolean?          @default(true)
-  beneficiarioId    Int
-  beneficiario      Personas          @relation(fields: [beneficiarioId], references: [id])
-  vehiculoId        Int
-  vehiculo          Vehiculos         @relation(fields: [vehiculoId], references: [id])
-  creatorUserId     Int
-  creatorUser       Usuarios          @relation(fields: [creatorUserId], references: [id])
-  createdAt         DateTime?         @default(now())
-  updatedAt         DateTime?         @updatedAt
-  RupeConductores   RupeConductores[]
+  id                                     Int                                      @id @default(autoincrement())
+  telefonoContacto                       String                                   @db.VarChar(50)
+  fechaOtorgamiento                      DateTime                                 @default(now())
+  fechaVencimiento                       DateTime                                 @default(now())
+  activo                                 Boolean?                                 @default(true)
+  beneficiarioId                         Int
+  beneficiario                           Personas                                 @relation(fields: [beneficiarioId], references: [id])
+  vehiculoId                             Int
+  vehiculo                               Vehiculos                                @relation(fields: [vehiculoId], references: [id])
+  creatorUserId                          Int
+  creatorUser                            Usuarios                                 @relation(fields: [creatorUserId], references: [id])
+  createdAt                              DateTime?                                @default(now())
+  updatedAt                              DateTime?                                @updatedAt
+  RupeConductores                        RupeConductores[]
+  RupeConductorDiscapacitadoRenovaciones RupeConductorDiscapacitadoRenovaciones[]
 }
 
 model RupeConductores {
@@ -121,6 +118,30 @@ model RupeConductores {
   persona                      Personas                   @relation(fields: [personaId], references: [id])
   rupeConductorDiscapacitadoId Int
   rupeConductorDiscapacitado   RupeConductorDiscapacitado @relation(fields: [rupeConductorDiscapacitadoId], references: [id])
+  creatorUserId                Int
+  creatorUser                  Usuarios                   @relation(fields: [creatorUserId], references: [id])
+  createdAt                    DateTime?                  @default(now())
+  updatedAt                    DateTime?                  @updatedAt
+}
+
+model RupeDiscapacidadRenovaciones {
+  id                 Int              @id @default(autoincrement())
+  rupeDiscapacidadId Int
+  rupeDiscapacidad   RupeDiscapacidad @relation(fields: [rupeDiscapacidadId], references: [id])
+  fechaRenovacion    DateTime         @default(now())
+  activo             Boolean?         @default(true)
+  creatorUserId      Int
+  creatorUser        Usuarios         @relation(fields: [creatorUserId], references: [id])
+  createdAt          DateTime?        @default(now())
+  updatedAt          DateTime?        @updatedAt
+}
+
+model RupeConductorDiscapacitadoRenovaciones {
+  id                           Int                        @id @default(autoincrement())
+  rupeConductorDiscapacitadoId Int
+  rupeConductorDiscapacitado   RupeConductorDiscapacitado @relation(fields: [rupeConductorDiscapacitadoId], references: [id])
+  fechaRenovacion              DateTime                   @default(now())
+  activo                       Boolean?                   @default(true)
   creatorUserId                Int
   creatorUser                  Usuarios                   @relation(fields: [creatorUserId], references: [id])
   createdAt                    DateTime?                  @default(now())

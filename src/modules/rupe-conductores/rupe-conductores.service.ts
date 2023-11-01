@@ -30,6 +30,7 @@ export class RupeConductoresService {
     direccion = 'desc',
     activo = '',
     parametro = '',
+    rupe = '',
     pagina = 1,
     itemsPorPagina = 10000
   }: any): Promise<any> {
@@ -56,8 +57,10 @@ export class RupeConductoresService {
     //   activo: activo === 'true' ? true : false
     // };
 
-    let where: any = {};
-    
+    let where: any = {
+      rupeConductorDiscapacitadoId: Number(rupe)
+    };
+
     // where.apellido ={ contains: parametro.toUpperCase() }
 
     // where.OR.push({
@@ -111,8 +114,34 @@ export class RupeConductoresService {
   }
 
   // Crear conductor
-  async insert(createData: Prisma.RupeConductoresCreateInput): Promise<RupeConductores> {
-    return await this.prisma.rupeConductores.create({ data: createData, include: { creatorUser: true } });
+  async insert(createData: any): Promise<RupeConductores> {
+
+    // Verifiacion - El conductor ya esta cartado en este RUPE
+    const existe = await this.prisma.rupeConductores.findFirst({
+      where: {
+        rupeConductorDiscapacitadoId: createData.rupeConductorDiscapacitadoId,
+        personaId: createData.personaId
+      }
+    });
+
+    if(existe) throw new NotFoundException('El conductor ya esta cargado en este RUPE');
+
+    // Verificacion - No pueden haber mas de 3 conductores en un RUPE
+    const cantidad = await this.prisma.rupeConductores.count({
+      where: {
+        rupeConductorDiscapacitadoId: createData.rupeConductorDiscapacitadoId
+      }
+    });
+
+    if(cantidad >= 3) throw new NotFoundException('No pueden haber mas de 3 conductores en un RUPE');
+
+    return await this.prisma.rupeConductores.create({
+      data: createData, include: {
+        persona: true,
+        rupeConductorDiscapacitado: true,
+        creatorUser: true
+      }
+    });
   }
 
   // Actualizar conductores
@@ -121,6 +150,20 @@ export class RupeConductoresService {
       where: { id },
       data: updateData,
       include: {
+        persona: true,
+        rupeConductorDiscapacitado: true,
+        creatorUser: true
+      }
+    })
+  }
+
+  // Eliminar conductor
+  async delete(id: number): Promise<RupeConductores> {
+    return await this.prisma.rupeConductores.delete({
+      where: { id },
+      include: {
+        persona: true,
+        rupeConductorDiscapacitado: true,
         creatorUser: true
       }
     })

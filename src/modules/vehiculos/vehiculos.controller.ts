@@ -23,6 +23,20 @@ export class VehiculosController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Get('/parametro/dominio/:dominio')
+  async getDominioVehiculo(@Res() res, @Param('dominio') dominio: string): Promise<any> {
+
+    const vehiculo = await this.vehiculosService.getDominio(dominio);
+
+    return res.status(HttpStatus.OK).json({
+      success: true,
+      message: 'Vehiculo obtenido correctamente',
+      vehiculo
+    })
+
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Get('/')
   async getAllVehiculos(@Res() res, @Query() query): Promise<any> {
     const { vehiculos, totalItems } = await this.vehiculosService.getAll(query);

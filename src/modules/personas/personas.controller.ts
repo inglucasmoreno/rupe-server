@@ -23,9 +23,22 @@ export class PersonasController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @Get('/parametro/dni/:dni')
+  async getDNIPersona(@Res() res, @Param('dni') dni: string): Promise<any> {
+
+    const persona = await this.personasService.getDNI(dni);
+
+    return res.status(HttpStatus.OK).json({
+      success: true,
+      message: 'Persona obtenida correctamente',
+      persona
+    })
+
+  }
+
+  @UseGuards(JwtAuthGuard)
   @Get('/')
   async getAllPersonas(@Res() res, @Query() query): Promise<any> {
-    console.log(query);
     const { personas, totalItems } = await this.personasService.getAll(query);
     return res.status(HttpStatus.OK).json({
       success: true,

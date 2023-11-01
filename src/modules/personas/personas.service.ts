@@ -22,6 +22,21 @@ export class PersonasService {
 
   }
 
+  // Persona por DNI
+  async getDNI(dni: string): Promise<Personas> {
+
+    const persona = await this.prisma.personas.findFirst({
+      where: { dni },
+      include: {
+        creatorUser: true,
+      }
+    })
+
+    if (!persona) throw new NotFoundException('La persona no existe');
+    return persona;
+
+  }
+
   // Listar personas
   async getAll({
     columna = 'apellido',
@@ -117,7 +132,6 @@ export class PersonasService {
     // Uppercase
     createData.apellido = createData.apellido?.toLocaleUpperCase().trim();
     createData.nombre = createData.nombre?.toLocaleUpperCase().trim();
-    createData.discapacidad = String(createData.discapacidad) === 'true' ? true : false;
 
     // Verificacion: Campos obligatorios
 
@@ -137,7 +151,6 @@ export class PersonasService {
     // Uppercase
     updateData.apellido = updateData.apellido?.toString().toLocaleUpperCase().trim();
     updateData.nombre = updateData.nombre?.toString().toLocaleUpperCase().trim();
-    updateData.discapacidad = String(updateData.discapacidad) === 'true' ? true : false;
 
     const personaDB = await this.prisma.personas.findFirst({ where: { id } });
 
