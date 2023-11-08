@@ -35,6 +35,21 @@ export class RupeDiscapacidadController {
 
   }
 
+  @Get('/imprimir-oblea/:id')
+  async imprimirOblea(@Res() res, @Param('id') id: number): Promise<void> {
+
+    const buffer = await this.rupesService.generarOblea(id);
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment; filename-example.pdf',
+      'Content-Length': buffer.length
+    })
+
+    res.end(buffer);
+
+  }
+
   @UseGuards(JwtAuthGuard)
   @Post('/')
   async insertRupe(

@@ -22,6 +22,21 @@ export class RupeConductorDiscapacitadoController {
 
   }
 
+  @Get('/imprimir-oblea/:id')
+  async imprimirOblea(@Res() res, @Param('id') id: number): Promise<void> {
+
+    const buffer = await this.rupesService.generarOblea(id);
+
+    res.set({
+      'Content-Type': 'application/pdf',
+      'Content-Disposition': 'attachment; filename-example.pdf',
+      'Content-Length': buffer.length
+    })
+
+    res.end(buffer);
+
+  }
+
   @UseGuards(JwtAuthGuard)
   @Get('/')
   async getAllRupes(@Res() res, @Query() query): Promise<any> {
@@ -60,7 +75,7 @@ export class RupeConductorDiscapacitadoController {
 
   @UseGuards(JwtAuthGuard)
   @Patch('/:id')
-  async updateRupe(@Res() res, @Param('id') id: number, @Body() updateData:Prisma.RupeConductorDiscapacitadoUpdateInput): Promise<any> {
+  async updateRupe(@Res() res, @Param('id') id: number, @Body() updateData: Prisma.RupeConductorDiscapacitadoUpdateInput): Promise<any> {
 
     const rupe = await this.rupesService.update(id, updateData);
 
