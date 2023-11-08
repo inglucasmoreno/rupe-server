@@ -486,7 +486,7 @@ export class RupeConductorDiscapacitadoService {
           campoDerechaFormulario: {
             alignment: 'right',
             fontSize: 13,
-            marginTop: 10
+            marginTop: 7
           },
           tituloDniConductor: {
             marginTop: 10,
@@ -496,7 +496,7 @@ export class RupeConductorDiscapacitadoService {
             alignment: 'right',
             fontSize: 13,
             marginRight: 86,
-            marginTop: 10
+            marginTop: 7
           },
           tituloFechaVencimiento: {
             marginTop: 10,
@@ -506,23 +506,23 @@ export class RupeConductorDiscapacitadoService {
             alignment: 'right',
             fontSize: 13,
             marginRight: 78,
-            marginTop: 10
+            marginTop: 7
           },
           campoFechaOtorgamiento: { 
             alignment: 'right',
             fontSize: 13,
             marginRight: 77,
-            marginTop: 10
+            marginTop: 7
           },
           tituloDniBeneficiario: {
-            marginTop: 10,
+            marginTop: 7,
             marginRight: 33,
           },
           campoDniBeneficiario: {
             alignment: 'right',
             fontSize: 13,
             marginRight: 84,
-            marginTop: 10
+            marginTop: 5
           },
           fechaVencimiento: {
             marginTop: 20,
