@@ -108,7 +108,7 @@ export class RupeConductorDiscapacitadoService {
           },
 
           {
-            image: this.configService.get('NODE_ENV') === 'production' ? `../assets/logoDiscapacidad.png` : './assets/frase.png',
+            image: this.configService.get('NODE_ENV') === 'production' ? `../assets/frase.png` : './assets/frase.png',
             width: 530,
             style: {
               alignment: 'center',
@@ -117,7 +117,7 @@ export class RupeConductorDiscapacitadoService {
           },
 
           {
-            image: this.configService.get('NODE_ENV') === 'production' ? `../assets/logoDiscapacidad.png` : './assets/logoConductorDiscapacitado.png',
+            image: this.configService.get('NODE_ENV') === 'production' ? `../assets/logoConductorDiscapacitado.png` : './assets/logoConductorDiscapacitado.png',
             width: 270,
             style: {
               alignment: 'center',
